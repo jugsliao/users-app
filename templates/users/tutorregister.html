@@ -1,0 +1,28 @@
+{% extends 'first_app/base.html' %}
+<!DOCTYPE html>
+{% block content %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>register</title>
+  </head>
+  <body>
+    <p1 class="lead">Tutor sign up page</p1>
+    <br>
+    <hr>
+    {{form.errors}}
+    <form class="register" action="{% url 'users:tutorregister' %}" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    <br>
+    <p>Already have an account?<a href="/login"> Login</a></p>
+    <script type="text/javascript">
+      var help_text = document.getElementsByClassName('helptext')
+
+
+    </script>
+  </body>
+</html>
+{% endblock content %}
